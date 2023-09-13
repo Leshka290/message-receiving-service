@@ -8,7 +8,6 @@ spring:
     user: postgres
     password: postgres
     locations: classpath:db/migration
-    baseline-on-migrate: true
   cloud:
     aws:
       credentials:
@@ -20,5 +19,5 @@ spring:
 sqs:
   notifications:
     queue:
-      name: proselyte-sqs-demo.fifo
+      name: sqs.fifo
       region: af-south-1
