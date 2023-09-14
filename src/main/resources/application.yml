@@ -10,7 +10,7 @@ spring:
     user: ${DB_USER}
     password: ${DB_PASSWORD}
     locations: classpath:db/migration
-    baseline-on-migrate: true
+
   cloud:
     aws:
       credentials:
