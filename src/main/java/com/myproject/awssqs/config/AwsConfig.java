@@ -26,16 +26,4 @@ public class AwsConfig {
                                                                 @Value("${spring.cloud.aws.credentials.secret-key}") String secretKey) {
         return StaticCredentialsProvider.create(AwsBasicCredentials.create(accessKey, secretKey));
     }
-
-    public AmazonSQSAsync amazonSQSAsync(AWSCredentialsProvider awsCredentialsProvider,
-                                         @Value("${sqs.notifications.queue.region}") String region) {
-        return AmazonSQSAsyncClientBuilder.standard()
-                .withCredentials(awsCredentialsProvider)
-                .withRegion(region)
-                .build();
-    }
-
-    public QueueMessagingTemplate queueMessagingTemplate(AmazonSQSAsync amazonSQSAsync) {
-        return new QueueMessagingTemplate(amazonSQSAsync);
-    }
 }
